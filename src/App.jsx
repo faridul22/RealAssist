@@ -1,13 +1,16 @@
 
 import './App.css'
-import Chart from './Chart/Chart'
+import Chart from './components/Chart/Chart'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
 
 function App() {
 
   return (
     <>
-      <h1>Vite + React</h1>
+      <Header></Header>
       <Chart></Chart>
+      <Footer></Footer>
     </>
   )
 }
