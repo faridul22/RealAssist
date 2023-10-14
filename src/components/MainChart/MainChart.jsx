@@ -44,7 +44,7 @@ const MainChart = () => {
         datasets: [{
             label: 'Burglary',
             data: crimeName,
-            backgroundColor: 'aqua',
+            // backgroundColor: 'aqua',
             borderColor: '#1463FF',
             fill: true,
             tension: 0.4
@@ -64,16 +64,34 @@ const MainChart = () => {
                     stepSize: 25
                 }
             },
+            x: {
+                grid: {
+                    display: false,
+                },
 
+
+            },
+
+            responsive: true,
         },
-        responsive: true,
+        elements: {
+            point: {
+                radius: 0,
+                hoverRadius: 0,
+            },
+        },
     }
     return (
-        <div className='w-full bg-white rounded-xl mt-3'>
-            <Line className='mx-auto h-[134px]'
-                data={data}
-                options={options}
-            ></Line>
+        <div className='w-[563px] rounded-xl mt-3 bg-[#F2F4F5] pb-3'>
+            <p className='w-full bg-[#E8EEFB] rounded-t-xl mb-3 pb-1 px-2'>
+                <small className='text-[#1463FF] font-bold text-[9px] self-center'>Burglary</small>
+            </p>
+            <div style={{ width: "520px", height: "" }} className='mx-auto bg-white rounded-xl py-1 px-2'>
+                <Line
+                    data={data}
+                    options={options}
+                ></Line>
+            </div>
         </div >
     );
 };

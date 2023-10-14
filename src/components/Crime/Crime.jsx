@@ -1,15 +1,18 @@
-
 import MainChart from "../MainChart/MainChart";
-
+import crime from '../../assets/Crime.png'
 
 const Crime = () => {
     return (
-        <div className="mx-auto bg-[#F2F4F5]">
-            <div className="w-full mx-auto  rounded-xl  px-5 pb-3">
-                <p className='w-full bg-[#E8EEFB] rounded-t-xl'>
-                    <small className='text-[#1463FF]'>Burglary</small>
-                </p>
-                <MainChart></MainChart>
+        <div>
+            {/* Chart */}
+            <div >
+                <div className="m-2">
+                    <div className='flex justify-center items-center my-2'>
+                        <img src={crime} alt="" />
+                        <hr className="col-span-8 w-full bg-gradient-to-r from-blue-500 to-cyan-300 h-[2px] mt-1" />
+                    </div>
+                    <MainChart></MainChart>
+                </div>
             </div>
         </div>
     );
