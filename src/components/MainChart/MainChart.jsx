@@ -19,13 +19,14 @@ ChartJS.register(
     Tooltip
 )
 
-const Chart = () => {
+const MainChart = () => {
     const [realAssistData, setRealAssistData] = useState([]);
-    const [crimeKeys, setCrimeKeys] = useState([]);
 
     const years = realAssistData.map(year => (year.data_year))
-
+    const crimeName = realAssistData.map(nameOfCrime => nameOfCrime.Burglary / 100)
+    console.log('Burglary', crimeName)
     console.log('allData', realAssistData)
+
 
 
     useEffect(() => {
@@ -33,7 +34,6 @@ const Chart = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                setCrimeKeys(data.keys)
                 setRealAssistData(data.data)
             })
 
@@ -42,40 +42,40 @@ const Chart = () => {
     const data = {
         labels: years,
         datasets: [{
-            label: 'Sales of the week',
-            data: [3, 7, 15, 25],
+            label: 'Burglary',
+            data: crimeName,
             backgroundColor: 'aqua',
-            borderColor: 'black',
-            pointBorderColor: 'red',
+            borderColor: '#1463FF',
             fill: true,
             tension: 0.4
         }]
     }
     const options = {
         plugins: {
-            legend: true
+            legend: false,
+
         },
         scales: {
             y: {
+                display: true,
                 min: 0,
                 max: 100,
                 ticks: {
                     stepSize: 25
                 }
-            }
-        }
+            },
+
+        },
+        responsive: true,
     }
     return (
-        <div>
-            <h1>Hello world</h1>
-            <div style={{ width: "600px", height: "300px" }}>
-                <Line
-                    data={data}
-                    options={options}
-                ></Line>
-            </div>
-        </div>
+        <div className='w-full bg-white rounded-xl mt-3'>
+            <Line className='mx-auto h-[134px]'
+                data={data}
+                options={options}
+            ></Line>
+        </div >
     );
 };
 
-export default Chart;
+export default MainChart;
