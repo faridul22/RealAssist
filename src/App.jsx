@@ -32,7 +32,7 @@ function App() {
   return (
     <div className='flex justify-center items-center'>
       <div>
-        <div className='px-3 py-4 actual-receipt'>
+        <div className='px-3 py-1 actual-receipt'>
           <Header></Header>
           <Crime></Crime>
           <Footer></Footer>

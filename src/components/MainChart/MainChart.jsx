@@ -72,7 +72,7 @@ const MainChart = () => {
 
             },
 
-            responsive: true,
+
         },
         elements: {
             point: {
@@ -80,16 +80,19 @@ const MainChart = () => {
                 hoverRadius: 0,
             },
         },
+        responsive: false,
     }
     return (
-        <div className='w-[563px] rounded-xl mt-3 bg-[#F2F4F5] pb-3'>
+        <div className='w-[563px] rounded-xl mt-[8px] bg-[#F2F4F5] pb-3'>
             <p className='w-full bg-[#E8EEFB] rounded-t-xl mb-3 pb-1 px-2'>
                 <small className='text-[#1463FF] font-bold text-[9px] self-center'>Burglary</small>
             </p>
-            <div style={{ width: "520px", height: "" }} className='mx-auto bg-white rounded-xl py-1 px-2'>
+            <div style={{ width: "520px", height: "151px" }} className='mx-auto bg-white rounded-xl py-1 px-2'>
                 <Line
                     data={data}
                     options={options}
+                    width={495.31}
+                    height={134.13}
                 ></Line>
             </div>
         </div >

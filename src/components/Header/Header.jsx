@@ -2,7 +2,7 @@ import logo from '../../assets/Realassistai_Logo.png'
 
 const Header = () => {
     return (
-        <div className="w-[570px] my-4 h-[26px]">
+        <div className="w-[570px] my-[8px] h-[26px]">
             <div className='flex'>
                 <div className="flex-1">
                     <img src={logo} alt="" />
